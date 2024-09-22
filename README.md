@@ -41,7 +41,11 @@ https://github.com/halimsajidi/Bike-Sharing-Analysis.git
 cd Dashboard
 ```
 2. Open a terminal in the project directory.
-3. Run the Streamlit app using:
+3. install library on requirements.txt
+```bash
+pip install -r requirements.txt
+```
+4. Run the Streamlit app using:
 ```bash
 streamlit run app.py
 ```
