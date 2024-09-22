@@ -39,10 +39,10 @@ https://github.com/halimsajidi/Bike-Sharing-Analysis.git
 ```
 2. Setup Environment
 ```bash
-conda create --name main-ds python=3.9
+conda create --name main-ds python
 conda activate main-ds
 ```
-3. install library on requirements.txt
+3. Install the required Python packages
 ```bash
 cd Dashboard
 ```
