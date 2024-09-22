@@ -58,8 +58,8 @@ def create_by_temp_category_df(df):
     return temp_cat_df
 
 # Load cleaned data
-day_clean_df = pd.read_csv("https://raw.githubusercontent.com/halimsajidi/Bike-Sharing-Analysis/main/Data/day.csv")
-hour_df = pd.read_csv("https://raw.githubusercontent.com/halimsajidi/Bike-Sharing-Analysis/main/Dashboard/dataset.csv")
+day_clean_df = pd.read_csv("D:\halim\Activity\dicoding\python analisis data\dataset_day.csv")
+hour_df = pd.read_csv("D:\halim\Activity\dicoding\python analisis data\dataset_hour.csv")
 
 # Filter data
 day_clean_df["dteday"] = pd.to_datetime(day_clean_df["dteday"])
@@ -69,7 +69,7 @@ max_date = day_clean_df["dteday"].max()
 
 with st.sidebar:
     # Menambahkan logo 
-    st.image("https://github.com/halimsajidi/Bike-Sharing-Analysis/blob/main/Dashboard/BikeRental.png?raw=true")
+    st.image("BikeRental.png")
     
     # Mengambil start_date & end_date dari date_input
     start_date, end_date = st.date_input(
@@ -94,10 +94,15 @@ holiday_df = create_byholiday_df(main_df)
 workingday_df = create_byworkingday_df(main_df)
 season_df = create_byseason_df(main_df)
 weather_df = create_byweather_df(main_df)
-hourly_df = hourly_df.replace({
-    "yr": {0: 2011, 1: 2012}
-})
 temp_category_df = create_by_temp_category_df(second_df)
+
+# List dari dataframe
+dfs = [casual_register_df, monthly_df, hourly_df, holiday_df, workingday_df, season_df, weather_df, temp_category_df]
+
+# Loop untuk menggantikan nilai dalam kolom 'yr' di setiap dataframe
+for df in dfs:
+    df.replace({"yr": {0: 2011, 1: 2012}}, inplace=True)
+
 
 st.header('Bike Sharing Dashboard')
 # Menampilkan Bagaimana tren terakhir terkait jumlah pengguna baru dengan pengguna casual dalam beberapa tahun terakhir
@@ -130,9 +135,6 @@ plt.title("Jumlah total sepeda yang disewakan berdasarkan Bulan dan tahun")
 plt.legend(title="Tahun", loc="upper right")  
 plt.xticks(ticks=monthly_df["mnth"], labels=monthly_df["mnth"])
 plt.tight_layout()
-for line in ax.lines:
-    for x, y in zip(line.get_xdata(), line.get_ydata()):
-        plt.text(x, y, '{:.0f}'.format(y), color="white", ha="center", fontsize=8).set_backgroundcolor("gray")
 st.pyplot(fig)
 
 # pola yang terjadi pada jumlah total penyewaan sepeda berdasarkan Jam
