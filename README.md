@@ -37,11 +37,15 @@ pip install pandas matplotlib seaborn streamlit
 ```bash
 https://github.com/halimsajidi/Bike-Sharing-Analysis.git
 ```
+2. Setup Environment
+```bash
+conda create --name main-ds python=3.9
+conda activate main-ds
+```
+3. install library on requirements.txt
 ```bash
 cd Dashboard
 ```
-2. Open a terminal in the project directory.
-3. install library on requirements.txt
 ```bash
 pip install -r requirements.txt
 ```
