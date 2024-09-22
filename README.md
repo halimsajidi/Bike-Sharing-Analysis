@@ -36,6 +36,8 @@ pip install pandas matplotlib seaborn streamlit
 1. Clone the repository or download the source code.
 ```bash
 https://github.com/halimsajidi/Bike-Sharing-Analysis.git
+```
+```bash
 cd Dashboard
 ```
 2. Open a terminal in the project directory.
