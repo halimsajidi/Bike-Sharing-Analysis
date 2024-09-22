@@ -34,6 +34,12 @@ pip install pandas matplotlib seaborn streamlit
 
 ## How to Run
 1. Clone the repository or download the source code.
+```bash
+https://github.com/halimsajidi/Bike-Sharing-Analysis.git
+```
+```bash
+cd Dashboard
+```
 2. Open a terminal in the project directory.
 3. Run the Streamlit app using:
 ```bash
@@ -62,6 +68,3 @@ Each visualization is interactive and updates based on the date range selected b
 ## Notes
 - The year labels in the data have been replaced: `0` corresponds to 2011, and `1` corresponds to 2012.
 - Temperature categories are divided into three groups: **Cold**, **Moderate**, and **Hot**.
-
-## License
-This project is open-source and available under the MIT License.
